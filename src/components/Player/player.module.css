@@ -1,0 +1,24 @@
+@import "../../styles/vars.css";
+
+.player {
+  display: flex;
+  flex-direction: column;
+}
+
+.playerHeading {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.playerName {
+  margin: 0;
+  padding: 5px;
+  font-size: 5rem;
+  background-color: transparent;
+  outline: none;
+  border: none;
+
+  &:focus {
+    background-color: var(--input-backgorund);
+  }
+}

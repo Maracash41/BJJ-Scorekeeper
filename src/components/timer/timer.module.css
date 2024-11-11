@@ -1,12 +1,16 @@
+@import url("../../styles/vars.css");
+
 .timer {
-  display: flex;
+  background: #1a1a1a;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .timerTime {
   padding: 10px;
-  font-size: 5rem;
+  font-size: 10vw;
   color: #ff0000;
-  background-color: black;
 }
 
 .modal {
@@ -22,12 +26,11 @@
 }
 
 .modalContent {
-  display: flex;
-  width: 300px;
   background: white;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 300px;
   text-align: center;
 }
 
@@ -56,8 +59,24 @@ button {
   margin: 10px 5px;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 button:hover {
   background-color: #45a049;
+}
+
+.timer button {
+  background-color: #ffffff;
+  color: #4caf50;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.timer button:hover {
+  background-color: #f0f0f0;
 }

@@ -21,6 +21,10 @@ const Timer: React.FC = () => {
     }
   };
 
+  const pauseControl = () => {
+    setPaused(!paused);
+  };
+
   const reset = () => {
     setOver(false);
     setTime([0, 0]);
@@ -50,9 +54,10 @@ const Timer: React.FC = () => {
       <div className={classes.timer}>
         <p
           className={classes.timerTime}
+          onClick={() => pauseControl()}
         >{`${m.toString().padStart(2, "0")}:${s.toString().padStart(2, "0")}`}</p>
         <button
-          onClick={() => setPaused(!paused)}
+          onClick={() => pauseControl()}
         >{`${paused ? "Start" : "Pause"}`}</button>
         <button onClick={() => reset()}>Reset</button>
         <button onClick={openModal}>Set Timer</button>

@@ -1,22 +1,13 @@
 import React from "react";
-import Player from "../Player/Player";
+import Scores from "../Scores/Scores";
 
 interface ScoreboardProps {}
 
 const Scoreboard: React.FC<ScoreboardProps> = () => {
   return (
-    <>
-      <div className="scoreboard">
-        <div className="players">
-          <div className="player-one">
-            <Player name={"Player-1"} />
-          </div>
-          <div className="player-two">
-            <Player name={"Player-2"} />
-          </div>
-        </div>
-      </div>
-    </>
+    <div className="scoreboard">
+      <Scores />
+    </div>
   );
 };
 

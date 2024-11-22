@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import classes from "./timer.module.css";
 
-const Timer: React.FC = () => {
+interface ITimerProps {
+  hasTimeLeftHandle: () => void;
+}
+
+const Timer: React.FC<ITimerProps> = ({ hasTimeLeftHandle }) => {
   const [paused, setPaused] = useState(true);
   const [over, setOver] = useState(false);
   const [[m, s], setTime] = useState([5, 0]);
@@ -14,6 +18,7 @@ const Timer: React.FC = () => {
     if (paused || over) return;
     if (m === 0 && s === 0) {
       setOver(true);
+      hasTimeLeftHandle();
     } else if (s === 0) {
       setTime([m - 1, 59]);
     } else {

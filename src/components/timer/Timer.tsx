@@ -47,6 +47,7 @@ const Timer: React.FC<ITimerProps> = ({ hasTimeLeftHandle }) => {
   const setTimer = () => {
     setTime([inputMinutes, inputSeconds]);
     setPaused(false);
+    setOver(false);
     closeModal();
   };
 

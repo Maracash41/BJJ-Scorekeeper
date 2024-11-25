@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import classes from "./player.module.css";
+import { IPlayer } from "../intefaces/interfaces";
 
 interface PlayerProps {
-  name: string;
+  player: IPlayer;
+  changeName: (id: number, name: string) => void;
   team?: string;
   logo?: string;
 }
 
-const Player: React.FC<PlayerProps> = ({ name = "Anonimus", team = "" }) => {
-  const [playerName, setPlayerName] = useState(name);
+const Player: React.FC<PlayerProps> = ({ player, changeName }) => {
+  const [playerName, setPlayerName] = useState(player.name);
   const [playerTeam, setPlayerTeam] = useState("No Team");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [imageSrc, setImageSrc] = useState<string | null>(null);
@@ -39,6 +41,10 @@ const Player: React.FC<PlayerProps> = ({ name = "Anonimus", team = "" }) => {
       }
     };
   }, [imageSrc]);
+
+  useEffect(() => {
+    changeName(player.id, playerName);
+  }, [playerName]);
 
   return (
     <div className={classes.player}>

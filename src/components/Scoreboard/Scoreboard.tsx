@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Scores from "../Scores/Scores";
 import { IPlayer } from "../intefaces/interfaces";
 

@@ -3,12 +3,14 @@ import classes from "./timer.module.css";
 
 interface ITimerProps {
   hasTimeLeftHandle: () => void;
+  hasTimeLeft: boolean;
 }
 
-const Timer: React.FC<ITimerProps> = ({ hasTimeLeftHandle }) => {
+const Timer: React.FC<ITimerProps> = ({ hasTimeLeftHandle, hasTimeLeft }) => {
   const [paused, setPaused] = useState(true);
   const [over, setOver] = useState(false);
-  const [[m, s], setTime] = useState([5, 0]);
+  const [defaultTime, setDefaultTime] = useState([5, 0]);
+  const [[m, s], setTime] = useState(defaultTime);
 
   const [inputMinutes, setInputMinutes] = useState(0);
   const [inputSeconds, setInputSeconds] = useState(0);
@@ -18,7 +20,7 @@ const Timer: React.FC<ITimerProps> = ({ hasTimeLeftHandle }) => {
     if (paused || over) return;
     if (m === 0 && s === 0) {
       setOver(true);
-      hasTimeLeftHandle();
+      if (hasTimeLeft) hasTimeLeftHandle();
     } else if (s === 0) {
       setTime([m - 1, 59]);
     } else {
@@ -27,13 +29,18 @@ const Timer: React.FC<ITimerProps> = ({ hasTimeLeftHandle }) => {
   };
 
   const pauseControl = () => {
+    if (m === 0 && s === 0) return;
     setPaused(!paused);
+    if (!paused) {
+      if (!hasTimeLeft) hasTimeLeftHandle();
+    }
   };
 
   const reset = () => {
     setOver(false);
-    setTime([0, 0]);
-    setPaused(false);
+    setTime(defaultTime);
+    setPaused(true);
+    if (!hasTimeLeft) hasTimeLeftHandle();
   };
 
   const openModal = () => {
@@ -49,6 +56,7 @@ const Timer: React.FC<ITimerProps> = ({ hasTimeLeftHandle }) => {
     setPaused(false);
     setOver(false);
     closeModal();
+    if (!hasTimeLeft) hasTimeLeftHandle();
   };
 
   useEffect(() => {

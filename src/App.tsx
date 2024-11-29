@@ -66,16 +66,9 @@ function App() {
     setHasTimeLeft(!hasTimeLeft);
   };
 
-  useEffect(() => {
-    if (!hasTimeLeft) alert("Start funtction check the winner");
-    return () => {
-      setHasTimeLeft(true);
-    };
-  });
-
   return (
     <div className="main">
-      <Timer hasTimeLeftHandle={hasTimeLeftHandle} />
+      <Timer hasTimeLeftHandle={hasTimeLeftHandle} hasTimeLeft={hasTimeLeft} />
       <Scoreboard
         players={players}
         changeName={changeName}

@@ -6,12 +6,14 @@ interface ScoreboardProps {
   players: IPlayer[];
   changeName: (id: number, name: string) => void;
   incrementScore: (playerId: number, index: number, points: number) => void;
+  revertScore: () => void;
 }
 
 const Scoreboard: React.FC<ScoreboardProps> = ({
   players,
   changeName,
   incrementScore,
+  revertScore,
 }) => {
   const playerOne = players[0];
   const playerTwo = players[1];
@@ -23,6 +25,7 @@ const Scoreboard: React.FC<ScoreboardProps> = ({
         changeName={changeName}
         incrementScore={incrementScore}
       />
+      <button onClick={() => revertScore()}>Restore Previous Score</button>
       <Scores
         player={playerTwo}
         changeName={changeName}

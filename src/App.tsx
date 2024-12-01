@@ -28,6 +28,8 @@ function App() {
     },
   ]);
 
+  const [lastHistory, setLastHistory] = useState(players);
+
   const [winner, setWinner] = useState<IPlayer>();
 
   const changeName = (playerId: number, name: string) => {
@@ -42,6 +44,7 @@ function App() {
   };
 
   const incrementScore = (playerId: number, index: number, points: number) => {
+    setLastHistory(players);
     setPlayers((prevPlayers) => {
       return prevPlayers.map((player) => {
         if (player.id === playerId) {
@@ -64,6 +67,10 @@ function App() {
         return { ...player, currentScores: Array(7).fill(0) };
       });
     });
+  };
+
+  const revertScore = () => {
+    setPlayers(lastHistory);
   };
 
   const checkWinner = () => {
@@ -97,6 +104,7 @@ function App() {
         players={players}
         changeName={changeName}
         incrementScore={incrementScore}
+        revertScore={revertScore}
       />
     </div>
   );

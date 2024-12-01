@@ -4,9 +4,16 @@ import classes from "./timer.module.css";
 interface ITimerProps {
   hasTimeLeftHandle: () => void;
   hasTimeLeft: boolean;
+  isReset: boolean;
+  isResetHandle: () => void;
 }
 
-const Timer: React.FC<ITimerProps> = ({ hasTimeLeftHandle, hasTimeLeft }) => {
+const Timer: React.FC<ITimerProps> = ({
+  hasTimeLeftHandle,
+  hasTimeLeft,
+  isReset,
+  isResetHandle,
+}) => {
   const [paused, setPaused] = useState(true);
   const [over, setOver] = useState(false);
   const [defaultTime, setDefaultTime] = useState([5, 0]);

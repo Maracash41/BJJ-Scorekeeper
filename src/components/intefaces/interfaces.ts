@@ -2,9 +2,8 @@ export interface IPlayer {
   id: number;
   name: string;
   inGame: boolean;
+  currentScores: number[];
   currentTotalScore: number;
-  currentTotalP: number;
-  currentTotalA: number;
   winCount: number;
   drawCount: number;
   loseCount: number;

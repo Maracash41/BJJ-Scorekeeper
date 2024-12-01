@@ -10,9 +10,8 @@ function App() {
       id: 1,
       name: "Player-1",
       inGame: false,
+      currentScores: Array(7).fill(0),
       currentTotalScore: 0,
-      currentTotalP: 0,
-      currentTotalA: 0,
       winCount: 0,
       drawCount: 0,
       loseCount: 0,
@@ -21,21 +20,25 @@ function App() {
       id: 2,
       name: "Player-2",
       inGame: false,
+      currentScores: Array(7).fill(0),
       currentTotalScore: 0,
-      currentTotalP: 0,
-      currentTotalA: 0,
       winCount: 0,
       drawCount: 0,
       loseCount: 0,
     },
   ]);
 
+  const [isReset, setIsReset] = useState(false);
+  const isResetHandle = () => {
+    setIsReset(!isReset);
+  };
+
   const playersHandle = (player: IPlayer) => {}; //Todo изменить игрока при получении очка в скоребоарде
   const [winner, setWinner] = useState<IPlayer>();
 
-  const changeName = (id: number, name: string) => {
+  const changeName = (playerId: number, name: string) => {
     const updPlayers = players.map((player: IPlayer) => {
-      if (player.id === id) {
+      if (player.id === playerId) {
         return { ...player, name };
       } else {
         return player;
@@ -44,7 +47,22 @@ function App() {
     setPlayers(updPlayers);
   };
 
-  const addPlayer = () => {}; // Implement function add a new Player
+  const incrementScore = (playerId: number, index: number, points: number) => {
+    setPlayers((prevPlayers) => {
+      return prevPlayers.map((player) => {
+        if (player.id === playerId) {
+          const newScores = [...player.currentScores];
+          newScores[index] += points;
+
+          if (index !== 4 && index !== 5) {
+            newScores[newScores.length - 1] += points;
+          }
+          return { ...player, currentScores: newScores };
+        }
+        return player;
+      });
+    });
+  };
 
   const checkWinner = () => {
     const currentPlayers = players.filter((player: IPlayer) => {
@@ -68,11 +86,16 @@ function App() {
 
   return (
     <div className="main">
-      <Timer hasTimeLeftHandle={hasTimeLeftHandle} hasTimeLeft={hasTimeLeft} />
+      <Timer
+        hasTimeLeftHandle={hasTimeLeftHandle}
+        hasTimeLeft={hasTimeLeft}
+        isReset={isReset}
+        isResetHandle={isResetHandle}
+      />
       <Scoreboard
         players={players}
         changeName={changeName}
-        hasTimeLeft={hasTimeLeft}
+        incrementScore={incrementScore}
       />
     </div>
   );

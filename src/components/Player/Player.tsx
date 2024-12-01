@@ -10,14 +10,14 @@ interface PlayerProps {
 }
 
 const Player: React.FC<PlayerProps> = ({ player, changeName }) => {
-  const [playerName, setPlayerName] = useState(player.name);
+  const [currentPlayerName, setCurrentPlayerName] = useState(player.name);
   const [playerTeam, setPlayerTeam] = useState("No Team");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [imageSrc, setImageSrc] = useState<string | null>(null);
 
   const changePlayerNameHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    setPlayerName(value);
+    setCurrentPlayerName(value);
   };
 
   const changePlayerTeamHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -43,8 +43,8 @@ const Player: React.FC<PlayerProps> = ({ player, changeName }) => {
   }, [imageSrc]);
 
   useEffect(() => {
-    changeName(player.id, playerName);
-  }, [playerName]);
+    changeName(player.id, currentPlayerName);
+  }, [currentPlayerName]);
 
   return (
     <div className={classes.player}>
@@ -52,7 +52,7 @@ const Player: React.FC<PlayerProps> = ({ player, changeName }) => {
         type="text"
         className={classes.playerName}
         onChange={changePlayerNameHandler}
-        value={playerName}
+        value={currentPlayerName}
       />
       <label className={classes.team}>
         Team:

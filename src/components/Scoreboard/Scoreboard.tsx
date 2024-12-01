@@ -5,27 +5,28 @@ import { IPlayer } from "../intefaces/interfaces";
 interface ScoreboardProps {
   players: IPlayer[];
   changeName: (id: number, name: string) => void;
-  hasTimeLeft: boolean;
+  incrementScore: (playerId: number, index: number, points: number) => void;
 }
 
 const Scoreboard: React.FC<ScoreboardProps> = ({
   players,
   changeName,
-  hasTimeLeft,
+  incrementScore,
 }) => {
   const playerOne = players[0];
   const playerTwo = players[1];
+
   return (
     <div className="scoreboard">
       <Scores
         player={playerOne}
         changeName={changeName}
-        hasTimeLeft={hasTimeLeft}
+        incrementScore={incrementScore}
       />
       <Scores
         player={playerTwo}
         changeName={changeName}
-        hasTimeLeft={hasTimeLeft}
+        incrementScore={incrementScore}
       />
     </div>
   );

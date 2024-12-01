@@ -4,15 +4,13 @@ import classes from "./timer.module.css";
 interface ITimerProps {
   hasTimeLeftHandle: () => void;
   hasTimeLeft: boolean;
-  isReset: boolean;
-  isResetHandle: () => void;
+  resetCurrentScores: () => void;
 }
 
 const Timer: React.FC<ITimerProps> = ({
   hasTimeLeftHandle,
   hasTimeLeft,
-  isReset,
-  isResetHandle,
+  resetCurrentScores,
 }) => {
   const [paused, setPaused] = useState(true);
   const [over, setOver] = useState(false);
@@ -47,6 +45,7 @@ const Timer: React.FC<ITimerProps> = ({
     setOver(false);
     setTime(defaultTime);
     setPaused(true);
+    resetCurrentScores();
     if (!hasTimeLeft) hasTimeLeftHandle();
   };
 
@@ -63,6 +62,7 @@ const Timer: React.FC<ITimerProps> = ({
     setPaused(false);
     setOver(false);
     closeModal();
+    resetCurrentScores();
     if (!hasTimeLeft) hasTimeLeftHandle();
   };
 

@@ -28,12 +28,6 @@ function App() {
     },
   ]);
 
-  const [isReset, setIsReset] = useState(false);
-  const isResetHandle = () => {
-    setIsReset(!isReset);
-  };
-
-  const playersHandle = (player: IPlayer) => {}; //Todo изменить игрока при получении очка в скоребоарде
   const [winner, setWinner] = useState<IPlayer>();
 
   const changeName = (playerId: number, name: string) => {
@@ -64,6 +58,14 @@ function App() {
     });
   };
 
+  const resetCurrentScores = () => {
+    setPlayers((prevPlayers) => {
+      return prevPlayers.map((player: IPlayer) => {
+        return { ...player, currentScores: Array(7).fill(0) };
+      });
+    });
+  };
+
   const checkWinner = () => {
     const currentPlayers = players.filter((player: IPlayer) => {
       player.inGame === true;
@@ -89,8 +91,7 @@ function App() {
       <Timer
         hasTimeLeftHandle={hasTimeLeftHandle}
         hasTimeLeft={hasTimeLeft}
-        isReset={isReset}
-        isResetHandle={isResetHandle}
+        resetCurrentScores={resetCurrentScores}
       />
       <Scoreboard
         players={players}
@@ -100,5 +101,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

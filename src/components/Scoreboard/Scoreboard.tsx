@@ -7,6 +7,7 @@ interface ScoreboardProps {
   changeName: (id: number, name: string) => void;
   incrementScore: (playerId: number, index: number, points: number) => void;
   revertScore: () => void;
+  transferPoint: () => void;
 }
 
 const Scoreboard: React.FC<ScoreboardProps> = ({
@@ -14,6 +15,7 @@ const Scoreboard: React.FC<ScoreboardProps> = ({
   changeName,
   incrementScore,
   revertScore,
+  transferPoint,
 }) => {
   const playerOne = players[0];
   const playerTwo = players[1];
@@ -26,6 +28,7 @@ const Scoreboard: React.FC<ScoreboardProps> = ({
         incrementScore={incrementScore}
       />
       <button onClick={() => revertScore()}>Restore Previous Score</button>
+      <button onClick={() => transferPoint()}>Swipe Score</button>
       <Scores
         player={playerTwo}
         changeName={changeName}

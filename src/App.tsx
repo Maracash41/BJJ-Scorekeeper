@@ -4,6 +4,12 @@ import Timer from "./components/timer/Timer";
 import Scoreboard from "./components/Scoreboard/Scoreboard";
 import { IPlayer } from "./components/intefaces/interfaces";
 
+interface ILastScore {
+  playerId: number;
+  index: number;
+  points: number;
+}
+
 function App() {
   const [players, setPlayers] = useState<IPlayer[]>([
     {
@@ -29,6 +35,7 @@ function App() {
   ]);
 
   const [lastHistory, setLastHistory] = useState(players);
+  const [lastScore, setLastScore] = useState<ILastScore>();
 
   const [winner, setWinner] = useState<IPlayer>();
 
@@ -45,6 +52,14 @@ function App() {
 
   const incrementScore = (playerId: number, index: number, points: number) => {
     setLastHistory(players);
+    setLastScore((prevLastScore) => {
+      return {
+        ...prevLastScore,
+        playerId: playerId,
+        index: index,
+        points: points,
+      };
+    });
     setPlayers((prevPlayers) => {
       return prevPlayers.map((player) => {
         if (player.id === playerId) {
@@ -61,6 +76,23 @@ function App() {
     });
   };
 
+  const dicrementScore = (playerId: number, index: number, points: number) => {
+    setLastHistory(players);
+    setPlayers((prevPlayers) => {
+      return prevPlayers.map((player) => {
+        if (player.id === playerId) {
+          const newScores = [...player.currentScores];
+          newScores[index] -= points;
+
+          if (index !== 4 && index !== 5) {
+            newScores[newScores.length - 1] -= points;
+          }
+          return { ...player, currentScores: newScores };
+        }
+        return player;
+      });
+    });
+  };
   const resetCurrentScores = () => {
     setPlayers((prevPlayers) => {
       return prevPlayers.map((player: IPlayer) => {
@@ -71,6 +103,20 @@ function App() {
 
   const revertScore = () => {
     setPlayers(lastHistory);
+  };
+
+  const transferPoint = () => {
+    if (lastScore) {
+      const { playerId, index, points } = lastScore;
+      dicrementScore(playerId, index, points);
+      setLastScore(undefined);
+      const otherPlayer = players.find(
+        (player: IPlayer) => player.id !== playerId,
+      );
+      if (otherPlayer) {
+        incrementScore(otherPlayer.id, index, points);
+      }
+    }
   };
 
   const checkWinner = () => {
@@ -105,6 +151,7 @@ function App() {
         changeName={changeName}
         incrementScore={incrementScore}
         revertScore={revertScore}
+        transferPoint={transferPoint}
       />
     </div>
   );

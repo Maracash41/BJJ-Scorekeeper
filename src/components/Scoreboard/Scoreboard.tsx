@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Scores from "../Scores/Scores";
 import { IPlayer } from "../intefaces/interfaces";
+import classes from "./scoreboard.module.css";
 
 interface ScoreboardProps {
   players: IPlayer[];
@@ -21,14 +22,17 @@ const Scoreboard: React.FC<ScoreboardProps> = ({
   const playerTwo = players[1];
 
   return (
-    <div className="scoreboard">
+    <div className={classes.scoreboard}>
       <Scores
         player={playerOne}
         changeName={changeName}
         incrementScore={incrementScore}
       />
-      <button onClick={() => revertScore()}>Restore Previous Score</button>
-      <button onClick={() => transferPoint()}>Swipe Score</button>
+      <div className={classes.scoreboardButtons}>
+        <button onClick={() => transferPoint()}>&#8596;</button>
+        <button onClick={() => revertScore()}>&#8635;</button>
+      </div>
+
       <Scores
         player={playerTwo}
         changeName={changeName}

@@ -1,0 +1,18 @@
+@import url("../../styles/vars.css");
+
+.scoreboard {
+  display: flex;
+  gap: 5px;
+}
+
+.scoreboard > :nth-child(1) {
+  background-color: var(--background-player-one);
+}
+
+.scoreboard > :nth-child(3) {
+  background-color: var(--background-player-two);
+}
+
+.scoreboardButtons {
+  flex-direction: column;
+}

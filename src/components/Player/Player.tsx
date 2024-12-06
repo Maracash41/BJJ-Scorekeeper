@@ -54,7 +54,7 @@ const Player: React.FC<PlayerProps> = ({ player, changeName }) => {
         onChange={changePlayerNameHandler}
         value={currentPlayerName}
       />
-      <label className={classes.team}>
+      {/* <label className={classes.team}>
         Team:
         <input
           type="text"
@@ -73,7 +73,7 @@ const Player: React.FC<PlayerProps> = ({ player, changeName }) => {
           onChange={fileLogoHandler}
         />
       </label>
-      {imageSrc && <img src={imageSrc} />}
+      {imageSrc && <img src={imageSrc} />} */}
     </div>
   );
 };

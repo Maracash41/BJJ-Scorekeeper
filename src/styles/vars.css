@@ -1,12 +1,16 @@
 :root {
   --main-background-color: linear-gradient(to bottom, #f0f0f0, #a0a0a0);
-  --main-font-family: Arial, sans-serif;
+  --main-font-family: Oswald;
+  --background-color: #ffffff;
   --timer-color: #ff0000;
   --modal-background: rgba(255, 255, 255, 1);
   --button-background: #4caf50;
-  --button-hover-background: #45a049;
+  --button-background-hover: #45a049;
   --input-border: #ccc;
   --input-backgorund: #dfdddd;
-  --background-player-one: #ff7474;
-  --background-player-two: #5a5afd;
+  --background-player-one: #fb000d;
+  --background-player-two: #3515b0;
 }
+
+/*  background-color: #4caf50;
+background-color: #45a049; */

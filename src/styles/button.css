@@ -1,0 +1,15 @@
+@import url(./vars.css);
+.button {
+  background-color: var(--button-background);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 10px 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: var(--button-background-hover);
+  }
+}

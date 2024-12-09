@@ -1,5 +1,23 @@
 @import "./vars.css";
 
+/* oswald-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/oswald-v53-latin-regular.woff2") format("woff2");
+}
+
+/* oswald-600 - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../assets/fonts/oswald-v53-latin-600.woff2") format("woff2");
+}
+
 html,
 body,
 ul,
@@ -17,6 +35,5 @@ h5 {
 
 body {
   height: 100vh;
-  background: var(--main-background-color);
   font-family: var(--main-font-family);
 }

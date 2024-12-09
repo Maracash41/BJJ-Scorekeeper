@@ -141,17 +141,17 @@ function App() {
 
   return (
     <div className="main">
-      <Timer
-        hasTimeLeftHandle={hasTimeLeftHandle}
-        hasTimeLeft={hasTimeLeft}
-        resetCurrentScores={resetCurrentScores}
-      />
       <Scoreboard
         players={players}
         changeName={changeName}
         incrementScore={incrementScore}
         revertScore={revertScore}
         transferPoint={transferPoint}
+      />
+      <Timer
+        hasTimeLeftHandle={hasTimeLeftHandle}
+        hasTimeLeft={hasTimeLeft}
+        resetCurrentScores={resetCurrentScores}
       />
     </div>
   );

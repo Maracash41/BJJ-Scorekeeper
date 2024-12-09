@@ -29,8 +29,21 @@ const Scoreboard: React.FC<ScoreboardProps> = ({
         incrementScore={incrementScore}
       />
       <div className={classes.scoreboardButtons}>
-        <button onClick={() => transferPoint()}>&#8596;</button>
-        <button onClick={() => revertScore()}>&#8635;</button>
+        <button
+          className={classes.scoreboardButton + " " + classes.button}
+          onClick={() => transferPoint()}
+        >
+          &#8596; Transfer point
+        </button>
+        <button
+          className={classes.scoreboardButton + " " + classes.button}
+          onClick={() => revertScore()}
+        >
+          &#8635; Revert score
+        </button>
+        <button className={classes.scoreboardButton + " " + classes.button}>
+          &#9881; Settings
+        </button>
       </div>
 
       <Scores

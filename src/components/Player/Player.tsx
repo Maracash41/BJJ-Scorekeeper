@@ -17,6 +17,7 @@ const Player: React.FC<PlayerProps> = ({ player, changeName }) => {
 
   const changePlayerNameHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
+    if (value.length === 0) return;
     setCurrentPlayerName(value);
   };
 
@@ -53,6 +54,7 @@ const Player: React.FC<PlayerProps> = ({ player, changeName }) => {
         className={classes.playerName}
         onChange={changePlayerNameHandler}
         value={currentPlayerName}
+        maxLength={12}
       />
       {/* <label className={classes.team}>
         Team:

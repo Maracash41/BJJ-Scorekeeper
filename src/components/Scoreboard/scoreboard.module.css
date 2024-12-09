@@ -1,4 +1,5 @@
 @import url("../../styles/vars.css");
+@import url("../../styles/button.css");
 
 .scoreboard {
   display: flex;
@@ -11,8 +12,18 @@
 
 .scoreboard > :nth-child(3) {
   background-color: var(--background-player-two);
+  color: #fff;
 }
 
 .scoreboardButtons {
+  display: flex;
   flex-direction: column;
+}
+
+.scoreboardButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }

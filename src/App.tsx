@@ -114,6 +114,12 @@ function App() {
 
   const transferPoint = () => {
     if (lastScore) {
+      if (
+        players[0].currentScores[6] <= 0 &&
+        players[1].currentScores[6] <= 0
+      ) {
+        return;
+      }
       const { playerId, index, points } = lastScore;
       dicrementScore(playerId, index, points);
       setLastScore(undefined);

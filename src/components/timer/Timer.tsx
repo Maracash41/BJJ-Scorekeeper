@@ -77,16 +77,18 @@ const Timer: React.FC<ITimerProps> = ({
           className={classes.timerTime}
           onClick={() => pauseControl()}
         >{`${m.toString().padStart(2, "0")}:${s.toString().padStart(2, "0")}`}</p>
-        <button
-          onClick={() => pauseControl()}
-          className={classes.button}
-        >{`${paused ? "Start" : "Pause"}`}</button>
-        <button className={classes.button} onClick={() => reset()}>
-          Reset
-        </button>
-        <button className={classes.button} onClick={openModal}>
-          Set Timer
-        </button>
+        <div className={classes.timerControlButtons}>
+          <button
+            onClick={() => pauseControl()}
+            className={classes.button}
+          >{`${paused ? "Start" : "Pause"}`}</button>
+          <button className={classes.button} onClick={() => reset()}>
+            Reset
+          </button>
+          <button className={classes.button} onClick={openModal}>
+            Set Timer
+          </button>
+        </div>
         {isModalOpen && (
           <div className={classes.modal}>
             <div className={classes.modalContent}>

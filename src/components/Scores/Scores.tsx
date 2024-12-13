@@ -66,7 +66,7 @@ const Scores: React.FC<ScoresProps> = ({
             +A
           </button>
         </div>
-        <div className={classes.scoresTableHeader}>Total</div>
+        <div className={classes.scoresTableHeader}>TOTAL</div>
         <div className={classes.scoresTableCell}></div>
         {player.currentScores.map((score, index) => (
           <div className={classes.scoresTableCell} key={index}>

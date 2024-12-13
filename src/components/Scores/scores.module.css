@@ -1,17 +1,22 @@
 @import url("../../styles/button.css");
+.scores {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
 
 .scoresTable {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
+  align-items: center;
 }
 
 .scoresTableHeader {
-  padding: 10px;
   font-size: 2rem;
   font-weight: bold;
 }
 
 .scoresTableCell {
+  text-align: center;
   font-size: 2.5rem;
-  padding: 10px;
 }

@@ -41,9 +41,6 @@ const Scoreboard: React.FC<ScoreboardProps> = ({
         >
           &#8635; Revert score
         </button>
-        <button className={classes.scoreboardButton + " " + classes.button}>
-          &#9881; Settings
-        </button>
       </div>
 
       <Scores

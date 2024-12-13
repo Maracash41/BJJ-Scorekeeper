@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./styles/main.css";
+import classes from "./app.module.css";
 import Timer from "./components/timer/Timer";
 import Scoreboard from "./components/Scoreboard/Scoreboard";
 import { IPlayer } from "./components/intefaces/interfaces";
@@ -95,6 +96,12 @@ function App() {
   };
   const resetCurrentScores = () => {
     setPlayers((prevPlayers) => {
+      return prevPlayers.map((player: IPlayer) => {
+        return { ...player, currentScores: Array(7).fill(0) };
+      });
+    });
+
+    setLastHistory((prevPlayers) => {
       return prevPlayers.map((player: IPlayer) => {
         return { ...player, currentScores: Array(7).fill(0) };
       });

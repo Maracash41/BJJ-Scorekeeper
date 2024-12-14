@@ -114,10 +114,16 @@ function App() {
 
   const transferPoint = () => {
     if (lastScore) {
-      if (
-        players[0].currentScores[6] <= 0 &&
-        players[1].currentScores[6] <= 0
-      ) {
+      const sumOfScoresPlayerOne = players[0].currentScores.reduce(
+        (acc, curr) => acc + curr,
+        0,
+      );
+      const sumOfScoresPlayerTwo = players[1].currentScores.reduce(
+        (acc, curr) => acc + curr,
+        0,
+      );
+
+      if (sumOfScoresPlayerOne <= 0 && sumOfScoresPlayerTwo <= 0) {
         return;
       }
       const { playerId, index, points } = lastScore;
@@ -128,6 +134,7 @@ function App() {
       );
       if (otherPlayer) {
         incrementScore(otherPlayer.id, index, points);
+        setLastScore(undefined);
       }
     }
   };

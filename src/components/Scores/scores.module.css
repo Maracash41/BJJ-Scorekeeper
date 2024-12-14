@@ -3,12 +3,14 @@
   display: flex;
   flex-direction: column;
   padding: 10px;
+  width: 100%;
 }
 
 .scoresTable {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   align-items: center;
+  justify-items: center;
 }
 
 .scoresTableHeader {

@@ -153,7 +153,7 @@ function App() {
   };
 
   return (
-    <div className="main">
+    <div className={classes.main}>
       <Scoreboard
         players={players}
         changeName={changeName}

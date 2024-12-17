@@ -23,31 +23,36 @@ const Scoreboard: React.FC<ScoreboardProps> = ({
 
   return (
     <div className={classes.scoreboard}>
-      <Scores
-        player={playerOne}
-        changeName={changeName}
-        incrementScore={incrementScore}
-      />
+      <div className={classes.scoresPlayerOne}>
+        <Scores
+          player={playerOne}
+          changeName={changeName}
+          incrementScore={incrementScore}
+        />
+      </div>
       <div className={classes.scoreboardButtons}>
         <button
           className={classes.scoreboardButton + " " + classes.button}
           onClick={() => transferPoint()}
         >
-          &#8596; Transfer point
+          <span className={classes.scoreboardButtonIcon}>&#8596;</span> Transfer
+          point
         </button>
         <button
           className={classes.scoreboardButton + " " + classes.button}
           onClick={() => revertScore()}
         >
-          &#8635; Revert score
+          <span className={classes.scoreboardButtonIcon}>&#8635;</span> Revert
+          score
         </button>
       </div>
-
-      <Scores
-        player={playerTwo}
-        changeName={changeName}
-        incrementScore={incrementScore}
-      />
+      <div className={classes.scoresPlayerTwo}>
+        <Scores
+          player={playerTwo}
+          changeName={changeName}
+          incrementScore={incrementScore}
+        />
+      </div>
     </div>
   );
 };

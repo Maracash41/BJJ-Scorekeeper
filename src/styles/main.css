@@ -18,6 +18,12 @@
   src: url("../assets/fonts/oswald-v53-latin-600.woff2") format("woff2");
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html,
 body,
 ul,
@@ -36,4 +42,5 @@ h5 {
 body {
   height: 100vh;
   font-family: var(--main-font-family);
+  background: var(--main-background-color);
 }

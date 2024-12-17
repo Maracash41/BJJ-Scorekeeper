@@ -1,15 +1,17 @@
 :root {
-  --main-background-color: linear-gradient(to bottom, #f0f0f0, #a0a0a0);
+  --main-background-color: #303030;
   --main-font-family: Oswald;
-  --background-color: #ffffff;
-  --timer-color: #ff0000;
+  --main-font-color: #fff;
+  --timer-color: #ed1111;
+  --timer-background: #303030;
   --modal-background: rgba(255, 255, 255, 1);
   --button-background: #4caf50;
   --button-background-hover: #45a049;
   --input-border: #ccc;
-  --input-backgorund: #dfdddd;
-  --background-player-one: #fb000d;
-  --background-player-two: #3515b0;
+  --input-backgorund: #ffffff;
+  --input-backgorund-active: #dfdddd;
+  --background-player-one: #ed1111;
+  --background-player-two: #204da0;
 }
 
 /*  background-color: #4caf50;

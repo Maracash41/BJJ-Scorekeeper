@@ -4,6 +4,7 @@
   flex-direction: column;
   padding: 10px;
   width: 100%;
+  border-radius: 5px;
 }
 
 .scoresTable {
@@ -11,6 +12,7 @@
   grid-template-columns: repeat(8, 1fr);
   align-items: center;
   justify-items: center;
+  max-width: 1080px;
 }
 
 .scoresTableHeader {

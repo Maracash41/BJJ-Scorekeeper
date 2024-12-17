@@ -2,15 +2,14 @@
 @import url("../../styles/button.css");
 
 .timer {
-  background: var(--background-color);
+  background: var(--timer-background);
   padding: 20px;
   text-align: center;
 }
 
 .timerTime {
-  padding: 10px;
   font-size: 15rem;
-  color: #ff0000;
+  color: var(--timer-color);
   cursor: pointer;
 }
 
@@ -55,4 +54,10 @@ input[type="number"] {
   margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+@media screen and (max-width: 607px) {
+  .timerTime {
+    font-size: 10rem;
+  }
 }

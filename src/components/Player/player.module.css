@@ -10,11 +10,12 @@
   padding: 5px;
   max-width: 200px;
   font-size: 1.5rem;
-  background-color: transparent;
+  background: var(--input-backgorund);
+  border-radius: 5px;
   outline: none;
   border: none;
 
   &:focus {
-    background-color: var(--input-backgorund);
+    background-color: var(--input-backgorund-active);
   }
 }

@@ -1,0 +1,43 @@
+@import url("../../styles/vars.css");
+
+.header {
+  display: flex;
+  margin-bottom: 25px;
+  padding: 10px;
+}
+
+.headerHeading {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.headerLogo {
+  max-width: 100px;
+}
+
+.mainHeading {
+  font-size: 2rem;
+  color: var(--main-font-color);
+}
+
+@media screen and (max-width: 871px) {
+  .mainHeading {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .mainHeading {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 417px) {
+  .header {
+    margin-bottom: 10px;
+  }
+
+  .mainHeading {
+    font-size: 1rem;
+  }
+}

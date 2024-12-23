@@ -2,7 +2,7 @@
 
 .header {
   display: flex;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
   padding: 10px;
 }
 
@@ -39,5 +39,15 @@
 
   .mainHeading {
     font-size: 1rem;
+  }
+}
+
+@media screen and (max-height: 871px) {
+  .headerLogo {
+    max-width: 50px;
+  }
+
+  .mainHeading {
+    font-size: 1.2rem;
   }
 }

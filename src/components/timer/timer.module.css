@@ -3,12 +3,11 @@
 
 .timer {
   background: var(--timer-background);
-  padding: 20px;
   text-align: center;
 }
 
 .timerTime {
-  font-size: 15rem;
+  font-size: 10rem;
   color: var(--timer-color);
   cursor: pointer;
 }
@@ -16,6 +15,7 @@
 .timerControlButtons {
   display: flex;
   justify-content: center;
+  gap: 5px;
 }
 
 .modal {
@@ -58,6 +58,6 @@ input[type="number"] {
 
 @media screen and (max-width: 607px) {
   .timerTime {
-    font-size: 10rem;
+    font-size: 5rem;
   }
 }

@@ -40,7 +40,13 @@ h5 {
 }
 
 body {
-  height: 100vh;
   font-family: var(--main-font-family);
   background: var(--main-background-color);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
 }

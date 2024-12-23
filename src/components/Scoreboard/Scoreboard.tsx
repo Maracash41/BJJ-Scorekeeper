@@ -23,7 +23,7 @@ const Scoreboard: React.FC<ScoreboardProps> = ({
 
   return (
     <div className={classes.scoreboard}>
-      <div className={classes.scoresPlayerOne}>
+      <div className={classes.scoresPlayerOne + " " + classes.scoresContainer}>
         <Scores
           player={playerOne}
           changeName={changeName}
@@ -46,7 +46,7 @@ const Scoreboard: React.FC<ScoreboardProps> = ({
           score
         </button>
       </div>
-      <div className={classes.scoresPlayerTwo}>
+      <div className={classes.scoresPlayerTwo + " " + classes.scoresContainer}>
         <Scores
           player={playerTwo}
           changeName={changeName}

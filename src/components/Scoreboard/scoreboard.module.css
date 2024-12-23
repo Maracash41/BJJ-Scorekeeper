@@ -3,20 +3,23 @@
 
 .scoreboard {
   display: flex;
+  align-items: center;
   flex: 1 1;
   gap: 5px;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.scoresContainer {
   width: 100%;
 }
 
 .scoresPlayerOne {
   order: 1;
-  width: 100%;
 }
 
 .scoresPlayerTwo {
   order: 3;
-  width: 100%;
 }
 
 .scoreboard > :nth-child(1) {
@@ -31,7 +34,9 @@
 .scoreboardButtons {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   order: 2;
+  gap: 5px;
 }
 
 .scoreboardButton {

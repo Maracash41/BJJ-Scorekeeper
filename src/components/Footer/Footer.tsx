@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
           </a>
         </div>
         <div className={classes.footerAboutApp}>
-          <p className={classes.footerAboutAppName}>BJJ-Scoreboard</p>
+          <p className={classes.footerAboutAppName}>BJJ-Scorekeeper</p>
           <p className={classes.footerAboutAppVersion}>v1.0.0</p>
           <p className={classes.footerAboutAppYear}>2024</p>
         </div>

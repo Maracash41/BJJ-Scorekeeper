@@ -24,3 +24,19 @@
   text-align: center;
   font-size: 2rem;
 }
+
+@media screen and (max-width: 500px) {
+  .scoresTableHeader {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .scoresTableCell {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .scoresButton {
+    padding: 10px;
+  }
+}

@@ -20,7 +20,7 @@ const Scores: React.FC<ScoresProps> = ({
       <div className={classes.scoresTable}>
         <div className={classes.scoresTableHeader}>
           <button
-            className={classes.button}
+            className={classes.button + " " + classes.scoresButton}
             onClick={() => incrementScore(player.id, 0, 1)}
           >
             +1
@@ -28,7 +28,7 @@ const Scores: React.FC<ScoresProps> = ({
         </div>
         <div className={classes.scoresTableHeader}>
           <button
-            className={classes.button}
+            className={classes.button + " " + classes.scoresButton}
             onClick={() => incrementScore(player.id, 1, 2)}
           >
             +2
@@ -36,7 +36,7 @@ const Scores: React.FC<ScoresProps> = ({
         </div>
         <div className={classes.scoresTableHeader}>
           <button
-            className={classes.button}
+            className={classes.button + " " + classes.scoresButton}
             onClick={() => incrementScore(player.id, 2, 3)}
           >
             +3
@@ -44,7 +44,7 @@ const Scores: React.FC<ScoresProps> = ({
         </div>
         <div className={classes.scoresTableHeader}>
           <button
-            className={classes.button}
+            className={classes.button + " " + classes.scoresButton}
             onClick={() => incrementScore(player.id, 3, 4)}
           >
             +4
@@ -52,7 +52,7 @@ const Scores: React.FC<ScoresProps> = ({
         </div>
         <div className={classes.scoresTableHeader}>
           <button
-            className={classes.button}
+            className={classes.button + " " + classes.scoresButton}
             onClick={() => incrementScore(player.id, 4, 1)}
           >
             +P
@@ -60,7 +60,7 @@ const Scores: React.FC<ScoresProps> = ({
         </div>
         <div className={classes.scoresTableHeader}>
           <button
-            className={classes.button}
+            className={classes.button + " " + classes.scoresButton}
             onClick={() => incrementScore(player.id, 5, 1)}
           >
             +A

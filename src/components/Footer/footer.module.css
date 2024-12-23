@@ -1,6 +1,7 @@
 @import url("../../styles/vars.css");
 
 .footer {
+  margin-bottom: 5px;
   padding: 10px;
   color: var(--main-font-color);
 }
@@ -22,7 +23,17 @@
   display: flex;
   gap: 5px;
 }
-@media screen and (max-width: 390px) {
+
+@media screen and (max-width: 500px) {
+  .footer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+  }
+}
+@media screen and (max-width: 420px) {
   .footerContent {
     flex-direction: column;
     align-items: center;

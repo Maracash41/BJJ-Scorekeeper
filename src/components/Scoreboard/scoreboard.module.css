@@ -55,7 +55,9 @@
 
 @media screen and (max-width: 974px) {
   .scoreboard {
-    flex-wrap: wrap;
+    flex-direction: column;
+    margin-bottom: 5px;
+    flex: 0 1;
   }
 
   .scoresPlayerOne {
@@ -69,5 +71,10 @@
     flex-direction: row;
     justify-content: center;
     width: 100%;
+  }
+
+  .scoreboardButton {
+    flex-direction: row;
+    max-width: 100%;
   }
 }

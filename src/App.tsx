@@ -40,8 +40,6 @@ function App() {
   const [lastHistory, setLastHistory] = useState(players);
   const [lastScore, setLastScore] = useState<ILastScore>();
 
-  const [winner, setWinner] = useState<IPlayer>();
-
   const changeName = (playerId: number, name: string) => {
     const updPlayers = players.map((player: IPlayer) => {
       if (player.id === playerId) {
@@ -138,21 +136,6 @@ function App() {
         incrementScore(otherPlayer.id, index, points);
         setLastScore(undefined);
       }
-    }
-  };
-
-  const checkWinner = () => {
-    const currentPlayers = players.filter((player: IPlayer) => {
-      player.inGame === true;
-    });
-    if (
-      currentPlayers[0].currentTotalScore > currentPlayers[1].currentTotalScore
-    ) {
-      setWinner(currentPlayers[0]);
-      console.log("winner1 ---", winner);
-    } else {
-      setWinner(currentPlayers[1]);
-      console.log("winner2 ---", winner);
     }
   };
 

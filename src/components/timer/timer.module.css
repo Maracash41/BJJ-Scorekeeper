@@ -2,6 +2,7 @@
 @import url("../../styles/button.css");
 
 .timer {
+  flex: 1;
   background: var(--timer-background);
   text-align: center;
 }

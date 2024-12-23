@@ -25,6 +25,11 @@
   font-size: 2rem;
 }
 
+/* @media screen and (max-width: 500px) { 
+
+
+} */
+
 @media screen and (max-width: 500px) {
   .scoresTableHeader {
     font-size: 1.5rem;

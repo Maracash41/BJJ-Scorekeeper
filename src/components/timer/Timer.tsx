@@ -80,12 +80,18 @@ const Timer: React.FC<ITimerProps> = ({
         <div className={classes.timerControlButtons}>
           <button
             onClick={() => pauseControl()}
-            className={classes.button}
+            className={classes.button + " " + classes.timerButton}
           >{`${paused ? "Start" : "Pause"}`}</button>
-          <button className={classes.button} onClick={() => reset()}>
+          <button
+            className={classes.button + " " + classes.timerButton}
+            onClick={() => reset()}
+          >
             Reset
           </button>
-          <button className={classes.button} onClick={openModal}>
+          <button
+            className={classes.button + " " + classes.timerButton}
+            onClick={openModal}
+          >
             Set Timer
           </button>
         </div>
@@ -93,28 +99,40 @@ const Timer: React.FC<ITimerProps> = ({
           <div className={classes.modal}>
             <div className={classes.modalContent}>
               <h2 className={classes.modalHeading}>Set Timer</h2>
-              <label>
-                Minutes:
-                <input
-                  type="number"
-                  value={inputMinutes}
-                  onChange={(e) => setInputMinutes(parseInt(e.target.value))}
-                />
-              </label>
-              <label>
-                Seconds:
-                <input
-                  type="number"
-                  value={inputSeconds}
-                  onChange={(e) => setInputSeconds(parseInt(e.target.value))}
-                />
-              </label>
-              <button className={classes.button} onClick={setTimer}>
-                Set Timer
-              </button>
-              <button className={classes.button} onClick={closeModal}>
-                Close
-              </button>
+              <div className={classes.modalInputs}>
+                <label className={classes.modalLabel}>
+                  Minutes:
+                  <input
+                    type="number"
+                    className={classes.modalInput}
+                    value={inputMinutes}
+                    onChange={(e) => setInputMinutes(parseInt(e.target.value))}
+                  />
+                </label>
+                <label className={classes.modalLabel}>
+                  Seconds:
+                  <input
+                    type="number"
+                    className={classes.modalInput}
+                    value={inputSeconds}
+                    onChange={(e) => setInputSeconds(parseInt(e.target.value))}
+                  />
+                </label>
+              </div>
+              <div className={classes.modalButtons}>
+                <button
+                  className={classes.button + " " + classes.timerButton}
+                  onClick={setTimer}
+                >
+                  Set Timer
+                </button>
+                <button
+                  className={classes.button + " " + classes.timerButton}
+                  onClick={closeModal}
+                >
+                  Close
+                </button>
+              </div>
             </div>
           </div>
         )}

@@ -40,16 +40,23 @@
   text-align: center;
 }
 
-h2 {
+.modalHeading {
   margin: 0 0 15px;
 }
 
-label {
+.modalLabel {
   display: block;
   margin: 10px 0;
 }
 
-input[type="number"] {
+.modalInputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalInput {
   width: 100%;
   padding: 8px;
   margin-top: 5px;
@@ -57,8 +64,50 @@ input[type="number"] {
   border-radius: 4px;
 }
 
-@media screen and (max-width: 607px) {
+.modalButtons {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+@media screen and (max-width: 950px) {
+  .timer {
+    flex: 0;
+    display: flex;
+    justify-content: center;
+    background: var(--timer-background);
+    text-align: center;
+  }
+
   .timerTime {
     font-size: 5rem;
+  }
+
+  .timerControlButtons {
+    flex-direction: column;
+  }
+
+  .timerButton {
+    padding: 5px;
+  }
+}
+
+@media screen and (max-width: 555px) {
+  .timer {
+    flex-direction: column;
+  }
+
+  .timerTime {
+    font-size: 8rem;
+  }
+
+  .timerControlButtons {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .timerButton {
+    width: 100%;
+    max-width: 100px;
   }
 }

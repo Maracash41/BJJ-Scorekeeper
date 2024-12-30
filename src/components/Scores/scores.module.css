@@ -25,23 +25,26 @@
   font-size: 2rem;
 }
 
-/* @media screen and (max-width: 500px) { 
+@media screen and (max-width: 950px) {
+  .scores {
+    padding: 5px;
+  }
 
+  .scoresTable {
+    gap: 5px;
+  }
 
-} */
-
-@media screen and (max-width: 500px) {
   .scoresTableHeader {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     font-weight: bold;
   }
 
   .scoresTableCell {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
   }
 
   .scoresButton {
-    padding: 10px;
+    padding: 5px;
   }
 }

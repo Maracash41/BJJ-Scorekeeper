@@ -21,7 +21,13 @@
   color: var(--main-font-color);
 }
 
-@media screen and (max-width: 871px) {
+@media screen and (max-width: 950px) {
+  .header {
+    display: flex;
+    margin-bottom: 5px;
+    padding: 5px;
+  }
+
   .mainHeading {
     font-size: 1.8rem;
   }

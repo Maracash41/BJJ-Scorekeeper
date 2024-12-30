@@ -55,7 +55,6 @@
 
 @media screen and (max-width: 974px) {
   .scoreboard {
-    flex-direction: column;
     margin-bottom: 5px;
     flex: 0 1;
   }
@@ -68,13 +67,23 @@
     width: 100%;
   }
   .scoreboardButtons {
-    flex-direction: row;
     justify-content: center;
-    width: 100%;
+    align-items: center;
   }
 
   .scoreboardButton {
     flex-direction: row;
-    max-width: 100%;
+    font-size: 0.7rem;
+    padding: 5px;
+  }
+}
+
+@media screen and (max-width: 555px) {
+  .scoreboard {
+    flex-direction: column;
+  }
+
+  .scoreboardButtons {
+    flex-direction: row;
   }
 }

@@ -4,22 +4,32 @@
   display: flex;
   flex-direction: column;
 }
-
-.playerName {
-  margin: 0;
-  padding: 5px;
-  max-width: 200px;
-  font-size: 1.2rem;
-  background: var(--input-backgorund);
-  border-radius: 5px;
-  outline: none;
-  border: none;
-
-  &:focus {
-    background-color: var(--input-backgorund-active);
-  }
+.playerContainer {
+  display: flex;
+  gap: 5px;
 }
 
+.playerName {
+  max-width: 200px;
+  font-size: 1.5rem;
+}
+
+.playerEditButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: var(--background-edit-btn);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: var(--background-edit-btn-hover);
+  }
+}
 @media screen and (max-width: 950px) {
   .player {
     margin-bottom: 5px;
@@ -27,5 +37,13 @@
 
   .playerName {
     font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .playerEditButton {
+    width: 15px;
+    height: 15px;
+    font-size: 0.5em;
   }
 }

@@ -1,6 +1,7 @@
 @import "../../styles/vars.css";
 
 .player {
+  position: relative;
   display: flex;
   flex-direction: column;
 }
@@ -30,6 +31,22 @@
     background-color: var(--background-edit-btn-hover);
   }
 }
+
+.playerEditModalInputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.inputHeading {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 5px;
+  font-size: 1.5rem;
+  color: var(--label-font-color);
+}
+
 @media screen and (max-width: 950px) {
   .player {
     margin-bottom: 5px;

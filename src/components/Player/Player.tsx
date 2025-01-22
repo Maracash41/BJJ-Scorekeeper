@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import classes from "./player.module.css";
 import { IPlayer } from "../intefaces/interfaces";
+import Modal from "../Modal/Modal";
 
 interface PlayerProps {
   player: IPlayer;
@@ -11,52 +12,48 @@ interface PlayerProps {
 
 const Player: React.FC<PlayerProps> = ({ player, changeName }) => {
   const [currentPlayerName, setCurrentPlayerName] = useState(player.name);
+  const [tempPlayerName, setTempPlayerName] = useState<string>("");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const changePlayerNameHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    if (value.length === 0) return;
-    setCurrentPlayerName(value);
+  const setPlayerName = () => {
+    if (!tempPlayerName.length) return;
+    setCurrentPlayerName(tempPlayerName);
+    changeName(player.id, tempPlayerName);
   };
 
-  const playerEditButtonHandler = () => {
-    switchModalOpenClose();
+  const toggleModal = () => {
+    setIsModalOpen((prev) => !prev);
   };
 
-  const switchModalOpenClose = () => {
-    setIsModalOpen(!isModalOpen);
+  const closeModal = () => {
+    setPlayerName();
+    toggleModal();
   };
-
-  useEffect(() => {
-    changeName(player.id, currentPlayerName);
-  }, [currentPlayerName]);
 
   return (
     <div className={classes.player}>
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        <div className={classes.playerEditModalInputs}>
+          <label className={classes.inputHeading}>
+            Name:
+            <input
+              type="text"
+              className={classes.playerName}
+              onChange={(e) => setTempPlayerName(e.target.value)}
+              placeholder={"Type your name"}
+              maxLength={12}
+            />
+          </label>
+        </div>
+      </Modal>
       {isModalOpen && (
         <div className={classes.playerEditModal}>
-          <div className={classes.playerEditModalContent}>
-            <div className={classes.playerEditModalInputs}>
-              <label>
-                Name:
-                <input
-                  type="text"
-                  className={classes.playerName}
-                  onChange={changePlayerNameHandler}
-                  placeholder={"Name"}
-                  maxLength={12}
-                />
-              </label>
-            </div>
-          </div>
+          <div className={classes.playerEditModalContent}></div>
         </div>
       )}
       <div className={classes.playerContainer}>
         <p className={classes.playerName}>{currentPlayerName}</p>
-        <button
-          className={classes.playerEditButton}
-          onClick={playerEditButtonHandler}
-        >
+        <button className={classes.playerEditButton} onClick={toggleModal}>
           &#9998;
         </button>
       </div>

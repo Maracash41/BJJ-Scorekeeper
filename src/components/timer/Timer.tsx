@@ -79,7 +79,6 @@ const Timer: React.FC<ITimerProps> = ({
       <div className={classes.timer}>
         <p
           className={classes.timerTime}
-          onClick={() => pauseControl()}
         >{`${m.toString().padStart(2, "0")}:${s.toString().padStart(2, "0")}`}</p>
         <div className={classes.timerControlButtons}>
           <button

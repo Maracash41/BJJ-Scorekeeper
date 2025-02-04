@@ -1,13 +1,14 @@
 @import "../../styles/vars.css";
 .about {
-  color: #303030;
+  color: var(--label-font-color);
+}
+
+.aboutLogo {
+  max-width: 100px;
 }
 
 .aboutContent {
   text-align: start;
-}
-
-.aboutContactsLinksList {
 }
 
 .aboutContactsLinksItemContainer {

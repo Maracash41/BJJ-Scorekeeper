@@ -1,9 +1,10 @@
 import React from "react";
 import classes from "./about.module.css";
+import logo from "../../assets/orunov_team_logo.svg";
 
 const About: React.FC = () => {
   return (
-    <div className={classes.about}>
+    <section className={classes.about}>
       <div className={classes.aboutContent}>
         <h3 className={classes.aboutHeading}>About</h3>
         <div className={classes.aboutDescription}>
@@ -11,6 +12,11 @@ const About: React.FC = () => {
             This application was created for Brazilian Jiu-Jitsu competitions or
             any other events where similar scoring can be applied.
           </p>
+          <p className={classes.aboutText}>
+            The creation of this application was inspired by the training
+            sessions in BJJ at the Orunov Academy of Jiu-Jitsu.
+          </p>
+          <img className={classes.aboutLogo} src={logo} alt="orunov team" />
         </div>
         <div className={classes.aboutContacts}>
           <h4 className={classes.aboutHeading}>Write me</h4>
@@ -55,7 +61,7 @@ const About: React.FC = () => {
           </ul>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

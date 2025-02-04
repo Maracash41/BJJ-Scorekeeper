@@ -12,10 +12,6 @@
   gap: 5px;
 }
 
-.headerLogo {
-  max-width: 100px;
-}
-
 .mainHeading {
   font-size: 2rem;
   color: var(--main-font-color);

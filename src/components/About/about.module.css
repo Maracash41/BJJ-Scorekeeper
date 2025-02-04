@@ -1,0 +1,25 @@
+@import "../../styles/vars.css";
+.about {
+  color: #303030;
+}
+
+.aboutContent {
+  text-align: start;
+}
+
+.aboutContactsLinksList {
+}
+
+.aboutContactsLinksItemContainer {
+  display: flex;
+  gap: 5px;
+}
+
+.itemContainerLabel {
+  font-weight: bold;
+}
+
+.itemContainerLink {
+  color: inherit;
+  text-decoration: none;
+}

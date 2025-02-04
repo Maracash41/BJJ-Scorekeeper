@@ -11,6 +11,16 @@
   justify-content: space-between;
 }
 
+.footerAboutButton {
+  background-color: transparent;
+  color: inherit;
+  border: none;
+  outline: none;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+}
+
 .footerAuthorLink {
   color: inherit;
 }

@@ -1,12 +1,16 @@
 import React from "react";
 import classes from "./about.module.css";
 import logo from "../../assets/orunov_team_logo.svg";
+import { useLanguage } from "../../utils/LanguageContext";
 
 const About: React.FC = () => {
+  const { getTranslation } = useLanguage();
   return (
     <section className={classes.about}>
       <div className={classes.aboutContent}>
-        <h3 className={classes.aboutHeading}>About</h3>
+        <h3 className={classes.aboutHeading}>
+          {getTranslation("aboutHeading")}
+        </h3>
         <div className={classes.aboutDescription}>
           <p className={classes.aboutText}>
             This application was created for Brazilian Jiu-Jitsu competitions or

@@ -6,6 +6,7 @@ import Scoreboard from "./components/Scoreboard/Scoreboard";
 import { IPlayer } from "./components/intefaces/interfaces";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import { LanguageProvider } from "./utils/LanguageContext";
 
 interface ILastScore {
   playerId: number;
@@ -146,22 +147,24 @@ function App() {
 
   return (
     <>
-      <Header />
-      <div className={classes.main}>
-        <Scoreboard
-          players={players}
-          changeName={changeName}
-          incrementScore={incrementScore}
-          revertScore={revertScore}
-          transferPoint={transferPoint}
-        />
-        <Timer
-          hasTimeLeftHandle={hasTimeLeftHandle}
-          hasTimeLeft={hasTimeLeft}
-          resetCurrentScores={resetCurrentScores}
-        />
-      </div>
-      <Footer />
+      <LanguageProvider>
+        <Header />
+        <main className={classes.main}>
+          <Scoreboard
+            players={players}
+            changeName={changeName}
+            incrementScore={incrementScore}
+            revertScore={revertScore}
+            transferPoint={transferPoint}
+          />
+          <Timer
+            hasTimeLeftHandle={hasTimeLeftHandle}
+            hasTimeLeft={hasTimeLeft}
+            resetCurrentScores={resetCurrentScores}
+          />
+        </main>
+        <Footer />
+      </LanguageProvider>
     </>
   );
 }

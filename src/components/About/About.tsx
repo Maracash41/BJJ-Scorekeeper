@@ -12,26 +12,19 @@ const About: React.FC = () => {
           {getTranslation("aboutHeading")}
         </h3>
         <div className={classes.aboutDescription}>
-          <p className={classes.aboutText}>
-            This application was created for Brazilian Jiu-Jitsu competitions or
-            any other events where similar scoring can be applied.
-          </p>
-          <p className={classes.aboutText}>
-            The creation of this application was inspired by the training
-            sessions in BJJ at the Orunov Academy of Jiu-Jitsu.
-          </p>
+          <p className={classes.aboutText}>{getTranslation("aboutText1")}</p>
+          <p className={classes.aboutText}>{getTranslation("aboutText2")}</p>
           <img className={classes.aboutLogo} src={logo} alt="orunov team" />
         </div>
         <div className={classes.aboutContacts}>
-          <h4 className={classes.aboutHeading}>Write me</h4>
-          <p className={classes.aboutText}>
-            If you have any questions or suggestions on how we can improve this
-            app, please let me know.
-          </p>
+          <h4 className={classes.aboutHeading}>{getTranslation("writeMe")}</h4>
+          <p className={classes.aboutText}>{getTranslation("questions")}</p>
           <ul className={classes.aboutContactsLinksList}>
             <li className={classes.aboutContactsLinksItem}>
               <div className={classes.aboutContactsLinksItemContainer}>
-                <p className={classes.itemContainerLabel}>E-maiL: </p>
+                <p className={classes.itemContainerLabel}>
+                  {getTranslation("email")}
+                </p>
                 <a
                   className={classes.itemContainerLink}
                   href="mailto: 9531945@gmail.com"
@@ -42,7 +35,9 @@ const About: React.FC = () => {
             </li>
             <li className={classes.aboutContactsLinksItem}>
               <div className={classes.aboutContactsLinksItemContainer}>
-                <p className={classes.itemContainerLabel}>Telegram: </p>
+                <p className={classes.itemContainerLabel}>
+                  {getTranslation("telegram")}
+                </p>
                 <a
                   className={classes.itemContainerLink}
                   href="https://t.me/mcash41"
@@ -53,7 +48,9 @@ const About: React.FC = () => {
             </li>
             <li className={classes.aboutContactsLinksItem}>
               <div className={classes.aboutContactsLinksItemContainer}>
-                <p className={classes.itemContainerLabel}>LinkedIn: </p>
+                <p className={classes.itemContainerLabel}>
+                  {getTranslation("linkedIn")}
+                </p>
                 <a
                   className={classes.itemContainerLink}
                   href="https://linkedin.com/in/mcash41"

@@ -1,0 +1,27 @@
+.languageSwitcher {
+  display: flex;
+  gap: 5px;
+  max-width: 80px;
+}
+
+.languageSwitcherText {
+  font-size: 1rem;
+  color: inherit;
+}
+
+.languageSwitcherBtns {
+  display: flex;
+  gap: 2px;
+}
+
+.languageSwitcherBtn {
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.languageSwitcherBtnImg {
+  width: 25px;
+}

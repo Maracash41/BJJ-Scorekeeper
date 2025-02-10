@@ -1,4 +1,5 @@
 import React from "react";
+import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 import classes from "./header.module.css";
 
 const Header: React.FC = () => {
@@ -7,6 +8,7 @@ const Header: React.FC = () => {
       <div className={classes.headerHeading}>
         <h1 className={classes.mainHeading}>BJJ Scorekeeper</h1>
       </div>
+      <LanguageSwitcher />
     </header>
   );
 };

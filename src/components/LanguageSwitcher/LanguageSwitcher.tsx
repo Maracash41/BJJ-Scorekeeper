@@ -7,8 +7,8 @@ import flagEn from "../../assets/flag_en.png";
 const LanguageSwitcher: React.FC = () => {
   const context = useLanguage();
   const setLang = (lang: string) => {
-    if (lang === "ru") context.setLanguage("ru");
-    if (lang === "en") context.setLanguage("en");
+    if (lang === "ru") context.updLanguage("ru");
+    if (lang === "en") context.updLanguage("en");
   };
   return (
     <div className={classes.languageSwitcher}>

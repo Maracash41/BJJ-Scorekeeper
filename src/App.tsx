@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./styles/main.css";
 import classes from "./app.module.css";
 import Timer from "./components/timer/Timer";

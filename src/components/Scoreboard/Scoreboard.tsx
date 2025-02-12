@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Scores from "../Scores/Scores";
 import { IPlayer } from "../intefaces/interfaces";
 import classes from "./scoreboard.module.css";
+import { useLanguage } from "../../utils/LanguageContext";
 
 interface ScoreboardProps {
   players: IPlayer[];
@@ -20,6 +21,7 @@ const Scoreboard: React.FC<ScoreboardProps> = ({
 }) => {
   const playerOne = players[0];
   const playerTwo = players[1];
+  const { getTranslation } = useLanguage();
 
   return (
     <div className={classes.scoreboard}>
@@ -35,15 +37,15 @@ const Scoreboard: React.FC<ScoreboardProps> = ({
           className={classes.scoreboardButton + " " + classes.button}
           onClick={() => transferPoint()}
         >
-          <span className={classes.scoreboardButtonIcon}>&#8596;</span> Transfer
-          point
+          <span className={classes.scoreboardButtonIcon}>&#8596;</span>{" "}
+          {getTranslation("transferBtn")}
         </button>
         <button
           className={classes.scoreboardButton + " " + classes.button}
           onClick={() => revertScore()}
         >
-          <span className={classes.scoreboardButtonIcon}>&#8635;</span> Revert
-          score
+          <span className={classes.scoreboardButtonIcon}>&#8635;</span>{" "}
+          {getTranslation("revertBtn")}
         </button>
       </div>
       <div className={classes.scoresPlayerTwo + " " + classes.scoresContainer}>

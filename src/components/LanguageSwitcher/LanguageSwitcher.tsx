@@ -12,9 +12,6 @@ const LanguageSwitcher: React.FC = () => {
   };
   return (
     <div className={classes.languageSwitcher}>
-      <p className={classes.languageSwitcherText}>
-        {context.getTranslation("language")}
-      </p>
       <div className={classes.languageSwitcherBtns}>
         <button
           className={classes.languageSwitcherBtn}

@@ -10,7 +10,7 @@
 .timerTime {
   font-size: 10rem;
   color: var(--timer-color);
-  cursor: pointer;
+  cursor: default;
 }
 
 .timerControlButtons {

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import classes from "./timer.module.css";
 import Modal from "../Modal/Modal";
+import { useLanguage } from "../../utils/LanguageContext";
 
 interface ITimerProps {
   hasTimeLeftHandle: () => void;
@@ -21,6 +22,7 @@ const Timer: React.FC<ITimerProps> = ({
   const [inputMinutes, setInputMinutes] = useState(0);
   const [inputSeconds, setInputSeconds] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { getTranslation } = useLanguage();
 
   const timerContorl = (): void => {
     if (paused || over) return;
@@ -84,25 +86,25 @@ const Timer: React.FC<ITimerProps> = ({
           <button
             onClick={() => pauseControl()}
             className={classes.button + " " + classes.timerButton}
-          >{`${paused ? "Start" : "Pause"}`}</button>
+          >{`${paused ? `${getTranslation("start")}` : `${getTranslation("pause")}`}`}</button>
           <button
             className={classes.button + " " + classes.timerButton}
             onClick={() => reset()}
           >
-            Reset
+            {getTranslation("reset")}
           </button>
           <button
             className={classes.button + " " + classes.timerButton}
             onClick={openModal}
           >
-            Set Timer
+            {getTranslation("setTimer")}
           </button>
         </div>
         <Modal isOpen={isModalOpen} onClose={closeModal}>
-          <h2 className={classes.modalHeading}>Set Timer</h2>
+          <h2 className={classes.modalHeading}>{getTranslation("setTimer")}</h2>
           <div className={classes.modalInputs}>
             <label className={classes.modalLabel}>
-              Minutes:
+              {getTranslation("minutes")}:
               <input
                 type="number"
                 className={classes.modalInput}
@@ -111,7 +113,7 @@ const Timer: React.FC<ITimerProps> = ({
               />
             </label>
             <label className={classes.modalLabel}>
-              Seconds:
+              {getTranslation("seconds")}:
               <input
                 type="number"
                 className={classes.modalInput}

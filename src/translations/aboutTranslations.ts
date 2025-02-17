@@ -9,8 +9,9 @@ const aboutTranslations = {
     questions:
       "If you have any questions or suggestions on how we can improve this app, please let me know.",
     email: "E-mail: ",
-    telegram: "Telegram: ",
-    linkedIn: "LinkedIn: ",
+    telegram: "Telegram:",
+    linkedIn: "LinkedIn:",
+    gitHub: "GitHub",
   },
   ru: {
     aboutHeading: "О приложении",
@@ -21,9 +22,10 @@ const aboutTranslations = {
     writeMe: "Напишите мне",
     questions:
       "Если у вас есть вопросы или предложения о том, как мы можем улучшить это приложение, пожалуйста, дайте мне знать.",
-    email: "Электронная почта: ",
-    telegram: "Телеграм: ",
-    linkedIn: "LinkedIn: ",
+    email: "E-mail: ",
+    telegram: "Telegram:",
+    linkedIn: "LinkedIn:",
+    gitHub: "GitHub",
   },
 };
 
@@ -35,6 +37,7 @@ export type aboutTranslationsKeys =
   | "questions"
   | "email"
   | "telegram"
+  | "gitHub"
   | "linkedIn";
 
 export default aboutTranslations;

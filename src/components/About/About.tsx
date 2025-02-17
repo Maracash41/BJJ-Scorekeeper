@@ -49,6 +49,19 @@ const About: React.FC = () => {
             <li className={classes.aboutContactsLinksItem}>
               <div className={classes.aboutContactsLinksItemContainer}>
                 <p className={classes.itemContainerLabel}>
+                  {getTranslation("gitHub")}
+                </p>
+                <a
+                  href="https://github.com/Maracash41"
+                  className={classes.itemContainerLink}
+                >
+                  Maracash41
+                </a>
+              </div>
+            </li>
+            <li className={classes.aboutContactsLinksItem}>
+              <div className={classes.aboutContactsLinksItemContainer}>
+                <p className={classes.itemContainerLabel}>
                   {getTranslation("linkedIn")}
                 </p>
                 <a

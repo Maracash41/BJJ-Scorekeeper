@@ -1,5 +1,6 @@
 import React from "react";
 import classes from "./modal.module.css";
+import { useLanguage } from "../../utils/LanguageContext";
 
 interface ModalProps {
   isOpen: boolean;
@@ -8,6 +9,7 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
+  const { getTranslation } = useLanguage();
   if (isOpen === false) return null;
 
   return (
@@ -15,7 +17,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
       <div className={classes.modalContent}>
         {children}
         <button className={classes.modalBtn} onClick={onClose}>
-          Close
+          {getTranslation("closeBtn")}
         </button>
       </div>
     </div>

@@ -21,17 +21,29 @@
   cursor: pointer;
 }
 
-.footerAuthorLink {
+.footerLicense {
+  max-width: 500px;
   color: inherit;
 }
 
-.footerAuthorIcon {
-  max-width: 100px;
+.footerLicenseText {
+  text-align: center;
+}
+
+.footerLicenseTextLink {
+  color: inherit;
 }
 
 .footerAboutApp {
   display: flex;
   gap: 5px;
+}
+
+@media screen and (max-width: 900px) {
+  .footerContent {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -41,11 +53,5 @@
     justify-content: center;
     align-items: center;
     padding: 0px;
-  }
-}
-@media screen and (max-width: 456px) {
-  .footerContent {
-    flex-direction: column;
-    align-items: center;
   }
 }

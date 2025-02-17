@@ -11,6 +11,10 @@
   text-align: start;
 }
 
+.aboutContactsLinksList {
+  list-style: none;
+}
+
 .aboutContactsLinksItemContainer {
   display: flex;
   gap: 5px;

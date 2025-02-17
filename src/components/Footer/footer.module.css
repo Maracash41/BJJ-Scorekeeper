@@ -8,7 +8,9 @@
 
 .footerContent {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 }
 
 .footerAboutButton {
@@ -16,7 +18,8 @@
   color: inherit;
   border: none;
   outline: none;
-  font-size: inherit;
+  text-decoration: underline;
+  font-size: 1.5rem;
   font-family: inherit;
   cursor: pointer;
 }
@@ -37,13 +40,6 @@
 .footerAboutApp {
   display: flex;
   gap: 5px;
-}
-
-@media screen and (max-width: 900px) {
-  .footerContent {
-    flex-direction: column;
-    align-items: center;
-  }
 }
 
 @media screen and (max-width: 500px) {

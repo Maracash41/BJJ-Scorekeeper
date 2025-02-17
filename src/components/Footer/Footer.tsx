@@ -23,6 +23,14 @@ const Footer: React.FC = () => {
         </Modal>
       ) : null}
       <div className={classes.footerContent}>
+        <button className={classes.footerAboutButton} onClick={openAboutModal}>
+          {getTranslation("aboutLink")}
+        </button>
+        <div className={classes.footerAboutApp}>
+          <p className={classes.footerAboutAppName}>BJJ-Scorekeeper</p>
+          <p className={classes.footerAboutAppVersion}>v1.0.0</p>
+          <p className={classes.footerAboutAppYear}>2025</p>
+        </div>
         <div className={classes.footerLicense}>
           <p className={classes.footerLicenseText}>
             {getTranslation("license")}
@@ -35,14 +43,6 @@ const Footer: React.FC = () => {
             </a>
             .
           </p>
-        </div>
-        <button className={classes.footerAboutButton} onClick={openAboutModal}>
-          {getTranslation("aboutLink")}
-        </button>
-        <div className={classes.footerAboutApp}>
-          <p className={classes.footerAboutAppName}>BJJ-Scorekeeper</p>
-          <p className={classes.footerAboutAppVersion}>v1.0.0</p>
-          <p className={classes.footerAboutAppYear}>2025</p>
         </div>
       </div>
     </footer>

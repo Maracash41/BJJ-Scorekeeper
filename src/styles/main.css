@@ -40,7 +40,7 @@ h5 {
 }
 
 body {
-  font-family: var(--main-font-family), sans-serif;
+  font-family: var(--main-font-family);
   background: var(--main-background-color);
 }
 

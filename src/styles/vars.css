@@ -1,6 +1,6 @@
 :root {
   --main-background-color: #303030;
-  --main-font-family: Oswald;
+  --main-font-family: Oswald, sans-serif;
   --main-font-color: #fff;
   --label-font-color: #303030;
   --additional-font-color: #303030;

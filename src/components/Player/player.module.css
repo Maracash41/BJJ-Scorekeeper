@@ -12,6 +12,7 @@
 
 .playerName {
   max-width: 200px;
+  font-family: var(--main-font-family);
   font-size: 1.5rem;
 }
 

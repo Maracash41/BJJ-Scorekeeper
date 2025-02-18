@@ -3,6 +3,7 @@
 .footer {
   margin-bottom: 5px;
   padding: 10px;
+  font-size: 0.7rem;
   color: var(--main-font-color);
 }
 
@@ -19,7 +20,7 @@
   border: none;
   outline: none;
   text-decoration: underline;
-  font-size: 1.5rem;
+  font-size: 1.5em;
   font-family: inherit;
   cursor: pointer;
 }

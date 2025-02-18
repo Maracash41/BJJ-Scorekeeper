@@ -68,7 +68,7 @@ const About: React.FC = () => {
                   className={classes.itemContainerLink}
                   href="https://linkedin.com/in/mcash41"
                 >
-                  Andrey Akimov
+                  mcash41
                 </a>
               </div>
             </li>

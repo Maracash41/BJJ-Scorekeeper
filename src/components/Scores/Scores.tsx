@@ -66,13 +66,33 @@ const Scores: React.FC<ScoresProps> = ({
             +A
           </button>
         </div>
-        <div className={classes.scoresTableHeader}>TOTAL</div>
+        <div
+          className={
+            classes.scoresTableHeader + " " + classes.scoresTableHeaderTotal
+          }
+        >
+          TOTAL
+        </div>
         <div className={classes.scoresTableCell}></div>
-        {player.currentScores.map((score, index) => (
-          <div className={classes.scoresTableCell} key={index}>
-            {score}
-          </div>
-        ))}
+        {player.currentScores.map((score, index) => {
+          if (index === player.currentScores.length - 1) {
+            return (
+              <div
+                className={
+                  classes.scoresTableCell + " " + classes.scoresTableCellTotal
+                }
+                key={index}
+              >
+                {score}
+              </div>
+            );
+          }
+          return (
+            <div className={classes.scoresTableCell} key={index}>
+              {score}
+            </div>
+          );
+        })}
       </div>
     </div>
   );

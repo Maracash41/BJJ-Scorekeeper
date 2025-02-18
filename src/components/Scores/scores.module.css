@@ -26,7 +26,7 @@
   font-size: 3rem;
   background-color: yellow;
   color: black;
-  border-radius: 5px;
+  border-radius: 10px 10px 0 0;
 }
 
 .scoresTableCell {
@@ -36,8 +36,12 @@
 }
 
 .scoresTableCellTotal {
+  width: 100%;
   font-size: 3rem;
   padding: 5px;
+  background-color: yellow;
+  color: black;
+  border-radius: 0 0 10px 10px;
 }
 
 @media screen and (max-width: 950px) {

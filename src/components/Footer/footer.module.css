@@ -1,8 +1,6 @@
 @import url("../../styles/vars.css");
 
 .footer {
-  margin-bottom: 5px;
-  padding: 10px;
   font-size: 0.7rem;
   color: var(--main-font-color);
 }

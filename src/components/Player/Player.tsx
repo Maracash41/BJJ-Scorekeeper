@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import classes from "./player.module.css";
 import { IPlayer } from "../intefaces/interfaces";
 import Modal from "../Modal/Modal";

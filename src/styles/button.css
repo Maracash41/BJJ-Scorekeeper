@@ -1,9 +1,10 @@
 @import url(./vars.css);
 .button {
+  padding: 10px 15px;
+  font-family: var(--main-font-family);
   background-color: var(--button-background);
   color: white;
   border: none;
-  padding: 10px 15px;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;

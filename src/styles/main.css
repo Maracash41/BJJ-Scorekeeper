@@ -1,12 +1,20 @@
 @import "./vars.css";
 
+@font-face {
+  font-display: swap;
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/oswald-vf.ttf") format("truetype");
+}
+
 /* oswald-regular - latin */
 @font-face {
   font-display: swap;
   font-family: "Oswald";
   font-style: normal;
   font-weight: 400;
-  src: url("../assets/fonts/oswald-v53-latin-regular.woff2") format("woff2");
+  src: url("../assets/fonts/oswald-regular.ttf") format("truetype");
 }
 
 /* oswald-600 - latin */
@@ -15,7 +23,7 @@
   font-family: "Oswald";
   font-style: normal;
   font-weight: 600;
-  src: url("../assets/fonts/oswald-v53-latin-600.woff2") format("woff2");
+  src: url("../assets/fonts/oswald-600.ttf") format("truetype");
 }
 
 *,

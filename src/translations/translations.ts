@@ -3,6 +3,7 @@ import scoreboardTranslations from "./scoreboardTranslations";
 import timerTranslations from "./timerTranslations";
 import modalTranslations from "./modalTranslations";
 import footerTranslations from "./footerTranslations";
+import playerTranslations from "./playerTranslations";
 
 const translations = {
   en: {
@@ -10,6 +11,7 @@ const translations = {
     ...scoreboardTranslations.en,
     ...timerTranslations.en,
     ...modalTranslations.en,
+    ...playerTranslations.en,
     ...footerTranslations.en,
   },
   ru: {
@@ -17,6 +19,7 @@ const translations = {
     ...scoreboardTranslations.ru,
     ...timerTranslations.ru,
     ...modalTranslations.ru,
+    ...playerTranslations.ru,
     ...footerTranslations.ru,
   },
 };

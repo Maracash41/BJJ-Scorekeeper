@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import classes from "./player.module.css";
 import { IPlayer } from "../intefaces/interfaces";
 import Modal from "../Modal/Modal";
+import { useLanguage } from "../../utils/LanguageContext";
 
 interface PlayerProps {
   player: IPlayer;
@@ -14,6 +15,7 @@ const Player: React.FC<PlayerProps> = ({ player, changeName }) => {
   const [currentPlayerName, setCurrentPlayerName] = useState(player.name);
   const [tempPlayerName, setTempPlayerName] = useState<string>("");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { getTranslation } = useLanguage();
 
   const setPlayerName = () => {
     if (!tempPlayerName.length) return;
@@ -35,12 +37,12 @@ const Player: React.FC<PlayerProps> = ({ player, changeName }) => {
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <div className={classes.playerEditModalInputs}>
           <label className={classes.inputHeading}>
-            Name:
+            {`${getTranslation("name")}:`}
             <input
               type="text"
               className={classes.playerName}
               onChange={(e) => setTempPlayerName(e.target.value)}
-              placeholder={"Type your name"}
+              placeholder={getTranslation("namePlaceholder")}
               maxLength={12}
             />
           </label>

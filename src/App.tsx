@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./styles/main.css";
 import classes from "./app.module.css";
-import Timer from "./components/timer/Timer";
+import Timer from "./components/Timer/Timer";
 import Scoreboard from "./components/Scoreboard/Scoreboard";
 import { IPlayer } from "./components/intefaces/interfaces";
 import Header from "./components/Header/Header";
